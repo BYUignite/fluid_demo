@@ -4,4 +4,4 @@
 * [WebGL-Fluid-Simulation](https://paveldogreat.github.io/WebGL-Fluid-Simulation/)
 * [Collection of fluid toys from Google](https://experiments.withgoogle.com/search?q=fluid)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZtVYwEZGU6A?si=zeuyYgfiawZdgF17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[<img src="readme_image.png" width=600>](https://youtu.be/ZtVYwEZGU6Ahttps://youtu.be/ZtVYwEZGU6Av)
