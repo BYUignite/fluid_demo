@@ -11,7 +11,7 @@
 import numpy as np
 import time
 import cv2 
-import keyboard
+#import keyboard
 from pynput.mouse import Button, Controller
 import drawing_styles_custom
 from screeninfo import get_monitors
@@ -75,13 +75,12 @@ def driver():
 
             img_H, img_W, _ = annotated_image.shape
 
-            if indexTip_x >= 0.5:
+            if indexTip_x >= 0.4 and indexTip_y*monitor.height >= 70:
                 mouse.press(Button.left)
-                mouse.position = (int(indexTip_x*img_W), int(indexTip_y*img_H))
-                #mouse.move(1, 0)
+                mouse.position = (int(indexTip_x*monitor.width), int(indexTip_y*monitor.height))
                 mouse.release(Button.left)
 
-            one_or_two = 1 if indexTip_x < 0.5 else 2    # color index finger depending on which side of the screen
+            one_or_two = 1 if indexTip_x < 0.4 else 2    # color index finger depending on which side of the screen
 
             mp.solutions.drawing_utils.draw_landmarks(
                 annotated_image,
@@ -89,8 +88,6 @@ def driver():
                 mp.solutions.hands.HAND_CONNECTIONS,
                 drawing_styles_custom.get_hand_landmarks_style(one_or_two),
                 drawing_styles_custom.get_hand_connections_style(one_or_two)
-                #mp.solutions.drawing_styles.get_default_hand_landmarks_style(),
-                #mp.solutions.drawing_styles.get_default_hand_connections_style()
             )
             return annotated_image
         except:
